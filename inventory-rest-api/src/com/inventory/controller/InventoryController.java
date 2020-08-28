@@ -24,7 +24,7 @@ public class InventoryController {
 	@Produces("text/plain")
 	public Response createDatabase () {
 		String status = dao.createTable();
-		String result1 = "Databace creation " + status;
+		String result1 = "Database creation " + status;
 		return Response.status(200).entity(result1).build();
 	}
 	

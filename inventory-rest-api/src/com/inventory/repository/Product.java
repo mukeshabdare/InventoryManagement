@@ -18,7 +18,7 @@ public class Product {
 	
 	private int id;
 	private double price;
-	private float discount;
+	private double discount;
 	private String category;
 	private String company;
 	private String color;
@@ -54,7 +54,7 @@ public class Product {
 				return false;
 		} else if (!description.equals(other.description))
 			return false;
-		if (Float.floatToIntBits(discount) != Float.floatToIntBits(other.discount))
+		if (Double.doubleToLongBits(discount) != Double.doubleToLongBits(other.discount))
 			return false;
 		if (id != other.id)
 			return false;
@@ -72,7 +72,7 @@ public class Product {
 		result = prime * result + ((color == null) ? 0 : color.hashCode());
 		result = prime * result + ((company == null) ? 0 : company.hashCode());
 		result = prime * result + ((description == null) ? 0 : description.hashCode());
-		result = prime * result + Float.floatToIntBits(discount);
+		result = (int) (prime * result + Double.doubleToLongBits(discount));
 		result = prime * result + id;
 		long temp;
 		temp = Double.doubleToLongBits(price);
